@@ -41,7 +41,8 @@ app.get('/', (req, res)=>{
         title:'FullStackBadAss.com',
         pageTitle:'Welcome to FullStackBadAss!',
         links:{
-            about:"./about"
+            about:"./about",
+            projects:"./projects"
         }       
     })
 });
@@ -52,6 +53,13 @@ app.get('/about', (req, res)=>{
         pageTitle:'About us'
     });
 });
+
+app.get('/projects', (req, res)=>{
+    res.render('projects.hbs',{
+        title:'FullStackBadAss.com',
+        pageTitle:'Our Projects'      
+    })
+})
 
 app.get('/error', (req, res)=>{
     res.send({
